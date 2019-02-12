@@ -1,0 +1,19 @@
+name: choirset
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - ipython=7.2.0
+  - jupyter=1.0.0
+  - matplotlib=3.0.2
+  - nbconvert=5.3.1
+  - numpy=1.16.1
+  - pandas=0.24.1
+  - python=3.6.7
+  - scikit-learn=0.20.2
+  - scipy=1.2.0
+  - pip:
+    - ffmpeg-python==0.1.17
+    - librosa==0.6.2
+    - numba==0.42.1
+    - resampy==0.2.1
