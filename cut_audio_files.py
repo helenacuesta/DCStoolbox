@@ -2,10 +2,11 @@
 This script uses pySox to cut all the audio files from a folder given the time boundaries as a csv file.
 '''
 
-import sox
-import pandas as pd
-import numpy as np
+from utils import *
+import os
+import config
 
+'''
 def cut_audiofile_iteratively(input_file,bounds,output_path):
 
     cnt=0
@@ -35,13 +36,15 @@ def read_time_boundaries(csvfile):
 
     return bounds
 
-### Calling stuff here. In the final code this should iterate over all the audio tracks
+'''
 
-bounds_file = '../cut_annotations_v1.csv'
-audio_file = '../audioInput/Dagstuhl_Stereo.wav'
+filename_dict = create_filename_dictionary(config.channel_assignments)
 
-bounds = read_time_boundaries(bounds_file)
-cut_audiofile_iteratively(audio_file,bounds,'../audioOutput/')
+for filename in os.listdir(config.input_path):
+
+    if 'wav' not in filename: continue
+
+    cut_audiofile_iteratively(filename,config.segment_boundaries,filename_dict)
 
 
 
