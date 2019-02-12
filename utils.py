@@ -41,10 +41,12 @@ def generate_filename(input_filename,segment_info,filename_dictionary):
     ##
 
     songid,group,take = segment_info[2],segment_info[3],segment_info[4]
-    if not take == 'Solo':
-        singer = filename_dictionary[track][group]
-    else:
-        singer = segment_info[5]
+#    if not take == 'Solo':
+#        singer = filename_dictionary[track][group]
+#    else:
+#        singer = segment_info[5]
+
+    singer = filename_dictionary[track][group]
     shortcut = filename_dictionary[track]['Shortcuts']
 
     output_filename = "{}_{}_{}_{}_{}.wav".format(songid,group,take,singer,shortcut)
