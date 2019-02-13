@@ -47,8 +47,8 @@ def extract_audio_from_video(video, fs):
 
 
 def cut_and_save_video(video, start, duration, output_path):
-    video_path = os.path.abspath(output_path + os.path.basename(video))
-    command = "ffmpeg -ss " + str(start) + " -i " + os.path.abspath(video) + " -c copy -t " + str(duration) + " " + video_path
+    video_path = os.path.abspath(output_path + os.path.basename(video[:-3])) + 'mp4'
+    command = "ffmpeg -ss " + str(start) + " -i " + os.path.abspath(video) + " -vcodec libx264 -t " + str(duration) + " " + video_path
 
     subprocess.call(command, shell=True)
 
