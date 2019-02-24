@@ -1,6 +1,6 @@
 import sox
 import config
-
+import os
 ##########################################################################################
 
 def create_filename_dictionary(channel_assignment):
@@ -85,6 +85,20 @@ def cut_audiofile_iteratively(input_filename,bounds,filename_dict):
         print(cnt)
 
 ##########################################################################################
+
+
+
+def normalize_audio_file(audiofile):
+
+    tfm = sox.Transformer()
+    tfm.convert(samplerate=22050)
+    tfm.norm() # this function normalized audio to -3dB
+
+    tfm.build(audiofile,os.path.join(config.output_folder_downsampled,audiofile))
+
+##########################################################################################
+
+
 
 
 
