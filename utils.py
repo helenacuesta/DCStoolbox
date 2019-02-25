@@ -88,13 +88,13 @@ def cut_audiofile_iteratively(input_filename,bounds,filename_dict):
 
 
 
-def normalize_audio_file(audiofile):
+def normalize_audio_file(audiopath,audiofile):
 
     tfm = sox.Transformer()
     tfm.convert(samplerate=22050)
-    tfm.norm() # this function normalized audio to -3dB
+    tfm.norm(db_level=-2) # this function normalized audio to -3dB
 
-    tfm.build(audiofile,os.path.join(config.output_folder_downsampled,audiofile))
+    tfm.build(os.path.join(audiopath,audiofile),os.path.join(config.output_folder_downsampled,audiofile))
 
 ##########################################################################################
 

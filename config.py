@@ -3,7 +3,8 @@ import numpy as np
 
 
 input_path = "../audioInput/"
-output_path = "../audioOutput/"
+#output_path = "../audioOutput/"
+output_path = "/Volumes/MTG MIR/DagstuhlChoirDataset/"
 
 boundaries_file = "../cut_annotations.csv"
 channels_file = "../channel_assignments.csv"
