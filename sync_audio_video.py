@@ -50,9 +50,68 @@ def extract_audio_from_video(video, fs):
 
 
 def cut_and_save_video(video, start, duration, output_file):
-    command = "ffmpeg -ss " + str(start) + " -i " + os.path.abspath(video) + " -vcodec libx264 -t " + str(duration) + " " + output_file
+    command = "ffmpeg -ss " + str(start) + " -i " + os.path.abspath(video) + " -vcodec libx264 -t " + str(duration) + " -y " + output_file
 
     subprocess.call(command, shell=True)
+
+
+if False:
+    for i, video_file in enumerate(file_list):
+        print('File %d of %d' %(i, len(file_list)))
+        # extract video audio
+        video_audio = extract_audio_from_video(video_file, fs)
+
+        # save audio
+        librosa.output.write_wav('./output/video_audio/' + os.path.basename(video_file)[:-4] + '.wav', video_audio, fs)
+
+
+for i, video_file in enumerate(file_list):
+    print('File %d of %d' % (i, len(file_list)))
+
+    # load video audio
+    video_audio, _ = librosa.load('./output/video_audio/' + os.path.basename(video_file)[:-4] + '.wav', sr=fs, mono=True)
+
+    # compute crosscorrelation with reference audio
+    lag = compute_sync_lag(audio_ref, video_audio)
+    start_ref_s = lag / fs  # start in reference audio
+    end_ref_s = (lag + len(video_audio)) / fs  # end in reference audio
+
+    # cut video according to cut annotation
+    # loop through whole video and find all cutpoints
+    search_start_s = start_ref_s
+    while 1:
+        cut_anno_sorted = cut_anno.iloc[(cut_anno[
+                                             'Start Time (sec)'] - search_start_s).abs().argsort()].to_numpy()  # find closest value to calculated lag
+        actual_start_s = cut_anno_sorted[0, 0]
+        actual_end_s = cut_anno_sorted[0, 1]
+
+        cut_start_s = actual_start_s - start_ref_s
+        cut_end_s = actual_end_s - start_ref_s
+
+        if cut_end_s > len(video_audio) / fs:
+            # break if snippet is not fully contained in video file
+            break
+
+        cur_out_file = './output/' + cut_anno_sorted[0, 2] + '_' + cut_anno_sorted[0, 3] + '_' + cut_anno_sorted[
+            0, 4] + '_SATB_Video.mp4'
+        if os.path.exists(cur_out_file):
+            cur_out_file = './output/' + cut_anno_sorted[0, 2] + '_' + cut_anno_sorted[0, 3] + '_' + cut_anno_sorted[
+                0, 4] + '_SATB_Video_1.mp4'
+
+            if os.path.exists(cur_out_file):
+                break
+
+        cut_and_save_video(video_file, cut_start_s, cut_end_s - cut_start_s, cur_out_file)
+
+        # save annotation
+        pd.DataFrame([os.path.basename(video_file), start_ref_s, end_ref_s]).T.to_csv(output_anno_path, header=False,
+                                                                                      mode='a', index=False)
+
+        search_start_s = actual_end_s
+
+
+
+
 
 
 # loop through all video files available
@@ -83,6 +142,14 @@ def processing_wrapper(video_file):
             break
 
         cur_out_file = './output/' + cut_anno_sorted[0, 2] + '_' + cut_anno_sorted[0, 3] + '_' + cut_anno_sorted[0, 4] + '_SATB_Video.mp4'
+        if os.path.exists(cur_out_file):
+            cur_out_file = './output/' + cut_anno_sorted[0, 2] + '_' + cut_anno_sorted[0, 3] + '_' + cut_anno_sorted[
+                0, 4] + '_SATB_Video_1.mp4'
+
+            if os.path.exists(cur_out_file):
+                break
+
+
         cut_and_save_video(video_file, cut_start_s, cut_end_s-cut_start_s, cur_out_file)
 
         # save annotation
@@ -90,5 +157,9 @@ def processing_wrapper(video_file):
 
         search_start_s = actual_end_s
 
-p = Pool(processes=None)
-p.map(processing_wrapper, np.sort(file_list))
+#p = Pool(processes=None)
+#p.map(processing_wrapper, np.sort(file_list))
+
+
+
+
