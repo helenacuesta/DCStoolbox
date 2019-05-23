@@ -4,11 +4,7 @@ This repository contains the code (work in progress) to create the Dagstuhl Choi
 
 Authors: Sebastian Rosenzweig and Helena Cuesta.
 
-##UTILS
-### Processing
-* pYIN Vamp
-* Salience function
-* Sonification: f0, beat, measure
+## UTILS
 
 ### Data preparation
 * beat2measure
@@ -19,6 +15,11 @@ Authors: Sebastian Rosenzweig and Helena Cuesta.
 * mixing audio files (pysox)
 * multi-f0 labels generation
 * xml --> midi (CW?)
+
+### Processing
+* pYIN Vamp
+* Salience function
+* Sonification: f0, beat, measure
 
 ###	Visualization
 * f0tools, visualization functions/librosa: beats/measures, f0 activity, f0 trajectories, midi
