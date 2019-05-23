@@ -21,14 +21,14 @@ Authors: Sebastian Rosenzweig and Helena Cuesta.
 * Salience function
 * Sonification: f0, beat, measure
 
-###	Visualization
+### Visualization
 * f0tools, visualization functions/librosa: beats/measures, f0 activity, f0 trajectories, midi
 * jupyter notebook player (SR)
 * pypianoroll (?) for MIDI visualization
 
-### EXPERIMENTS
+## EXPERIMENTS
 * Experiment1.ipynb
 * Experiment2.ipynb
 
-### DATA FILES 
+## DATA FILES 
 (not included in the code repository)
