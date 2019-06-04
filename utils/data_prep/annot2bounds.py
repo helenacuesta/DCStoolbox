@@ -5,7 +5,21 @@ t_in, t_out, label (given by SV)
 
 We assume each line of the csv contains one time instant and therefore two consecutive lines represent a segment
 
-Command should be: python3 annot2bounds.py path_to_the_annotation_file annotation_filename output_filename
+Example file format:
+
+0.000000000,2.1
+14.537645833,2.2
+27.290041667,2.3
+33.228708333,2.4
+45.363000000,3.1
+51.893791667,3.2
+64.284500000,3.3
+68.581625000,3.4
+80.421541667,4.1
+83.958708333,4.2
+
+
+Command to execute the script should be: python3 annot2bounds.py path_to_the_annotation_file annotation_filename output_filename
 
 '''
 
