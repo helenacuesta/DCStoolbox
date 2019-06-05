@@ -1,5 +1,5 @@
 import sox
-import config
+from utils.data_prep import config
 import os
 ##########################################################################################
 

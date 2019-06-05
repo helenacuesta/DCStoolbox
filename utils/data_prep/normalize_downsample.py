@@ -1,6 +1,6 @@
 import utils
 import os
-import config
+from utils.data_prep import config
 
 for filename in os.listdir(config.output_path):
 

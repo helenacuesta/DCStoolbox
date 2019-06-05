@@ -2,9 +2,9 @@
 This script uses pySox to cut all the audio files from a folder given the time boundaries as a csv file.
 '''
 
-from utils import *
+from utils.data_prep.utils import *
 import os
-import config
+from utils.data_prep import config
 
 filename_dict = create_filename_dictionary(config.channel_assignments)
 
