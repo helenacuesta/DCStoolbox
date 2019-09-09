@@ -30,5 +30,13 @@ Authors: Sebastian Rosenzweig and Helena Cuesta.
 * Experiment1.ipynb
 * Experiment2.ipynb
 
-## DATA FILES 
+## DATA FILES
 (not included in the code repository)
+
+## To run the Jupyter notebooks please
+* Install Miniconda
+* `conda env create -f environment.yml`
+* `source activate choirset`
+
+If you wan to contribute, please install nbstripout:
+`nbstripout --install`

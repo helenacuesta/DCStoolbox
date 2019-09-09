@@ -17,3 +17,4 @@ dependencies:
     - librosa==0.6.2
     - numba==0.42.1
     - resampy==0.2.1
+    - nbstripout==0.3.3
