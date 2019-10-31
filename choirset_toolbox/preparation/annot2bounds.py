@@ -3,7 +3,9 @@ This script takes time annotations from Sonic Visualiser and converts them to th
 
 t_in, t_out, label (given by SV)
 
-We assume each line of the csv contains one time instant and therefore two consecutive lines represent a segment
+The  input annotations define the segments to be cut from a full audio recording, and they
+contain timestamps where a new segment starts or ends. We assume each line of the csv contains one time instant and
+therefore two consecutive lines represent a segment
 
 Example file format:
 
@@ -25,18 +27,16 @@ Command to execute the script should be: python3 annot2bounds.py path_to_the_ann
 
 import pandas as pd
 import numpy as np
-import sys
+
+import argparse
 
 
-#PATH = '../'
-#FILENAME = 'dagstuhl_take_boundaries.csv'
+def main(args):
 
-def main(PATH, FILENAME, OUTPUT_FILENAME):
-
-    input_data = np.array(pd.read_csv(PATH+FILENAME))
+    input_data = np.array(pd.read_csv(args.PATH+args.FILENAME))
 
     output_data = []
-    for i in np.arange(input_data.shape[0]-1,step=2):
+    for i in np.arange(input_data.shape[0]-1, step=2):
 
         tin = input_data[i,0]
         tout = input_data[i+1,0]
@@ -45,19 +45,29 @@ def main(PATH, FILENAME, OUTPUT_FILENAME):
                 tin,tout,input_data[i,1]
             ]))
 
-    pd.DataFrame(output_data).to_csv(PATH+'v1_'+OUTPUT_FILENAME)
+    pd.DataFrame(output_data).to_csv(args.PATH+'v1_'+args.OUTPUT_FILENAME)
 
 
 if __name__ == '__main__':
 
-    if len(sys.argv) < 4:
-        print("Input arguments missing.")
-    else:
-        path = sys.argv[1]
-        filename = sys.argv[2]
-        out_filename = sys.argv[3]
+    parser = argparse.ArgumentParser(
+        description="Convert timestamp segment annotations to segment boundaries, i.e. [t_start, t_end, label]")
 
-        main(path, filename, out_filename)
+    parser.add_argument("--folder",
+                        dest="PATH",
+                        type=str,
+                        help="Path to the folder of the annotation file.")
+    parser.add_argument("--filename",
+                        dest="FILENAME",
+                        type=str,
+                        help="Filename of the annotation file."
+                        )
+    parser.add_argument("--out_fname",
+                        dest="OUTPUT_FILENAME",
+                        type=str,
+                        help="Filename to export the new annotation file.")
+
+    main((parser.parse_args()))
 
 
 
