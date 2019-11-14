@@ -11,6 +11,6 @@ channels_file = "../channel_assignments.csv"
 
 output_folder_downsampled = "../audioOutput/downsampled/"
 
-channel_assignments = np.array(pd.read_csv(channels_file)) # channel assignment
-segment_boundaries = np.array(pd.read_csv(boundaries_file)) # time boundaries of the segments to cut
+channel_assignments = np.array(pd.read_csv(channels_file))  # channel assignment
+segment_boundaries = np.array(pd.read_csv(boundaries_file))   # time boundaries of the segments to cut
 

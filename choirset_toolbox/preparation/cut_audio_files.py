@@ -1,10 +1,9 @@
 '''
 This script uses pySox to cut all the audio files from a folder given the time boundaries as a csv file.
 '''
-
-from utils.data_prep.utils import *
+from choirset_toolbox.preparation.utils import *
 import os
-from utils.data_prep import config
+from choirset_toolbox.preparation import config
 
 filename_dict = create_filename_dictionary(config.channel_assignments)
 

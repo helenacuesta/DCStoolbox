@@ -1,5 +1,5 @@
 import sox
-from utils.data_prep import config
+from choirset_toolbox.preparation import config
 import os
 ##########################################################################################
 
