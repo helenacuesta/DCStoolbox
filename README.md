@@ -1,6 +1,6 @@
 # Dagstuhl Choir Set Toolbox
 
-A Python toolbox for using the DCS dataset (work in progress).
+Python toolbox for using the DCS dataset (work in progress).
 
 Authors: Sebastian Rosenzweig and Helena Cuesta.
 
@@ -22,7 +22,7 @@ If you want to contribute to this repository, please install nbstripout:
 `nbstripout --install`
 
 ## Demo Notebooks
-* demo1_dataVisualization.ipynb: Basic parsing, visualization, and sonification
+* demo1_dataVisualization.ipynb: Basic parsing, visualization, and sonification functions
 * Microphone comparison.ipynb
 * Intonation quality.ipynb
 * Singer evolution or basses analysis.ipynb
