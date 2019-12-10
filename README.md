@@ -5,7 +5,7 @@ A Python toolbox for using the DCS dataset (work in progress).
 Authors: Sebastian Rosenzweig and Helena Cuesta.
 
 ## Get started
-1. Download the dataset from [Zenodo](https://www.zenodo.org)
+1. Download the DCS dataset from [Zenodo](https://www.zenodo.org)
 2. Clone repository
   * `git pull https://github.com/helenacuesta/ChoirSet-Toolbox.git`
   * `cd ./DCS-toolbox`
