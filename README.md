@@ -1,6 +1,6 @@
 # Dagstuhl Choir Set Toolbox
 
-A Python toolbox for using the CSD dataset (work in progress).
+A Python toolbox for using the DCS dataset (work in progress).
 
 Authors: Sebastian Rosenzweig and Helena Cuesta.
 
@@ -11,12 +11,12 @@ Authors: Sebastian Rosenzweig and Helena Cuesta.
   * `git submodule init`
   * `git submodule update`
 3. Install Miniconda
-  * `cd ./CSD-toolbox`
+  * `cd ./DCS-toolbox`
   * `conda env create -f environment.yml`
   * `source activate choirset`
   
 To use the toolbox functions type:
-`import CSD-toolbox`
+`import DCS-toolbox`
 
 If you want to contribute to this repository, please install nbstripout:
 `nbstripout --install`
