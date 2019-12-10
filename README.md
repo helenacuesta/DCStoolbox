@@ -8,10 +8,10 @@ Authors: Sebastian Rosenzweig and Helena Cuesta.
 1. Download the dataset from [Zenodo](https://www.zenodo.org)
 2. Clone repository
   * `git pull https://github.com/helenacuesta/ChoirSet-Toolbox.git`
+  * `cd ./DCS-toolbox`
   * `git submodule init`
   * `git submodule update`
 3. Install Miniconda
-  * `cd ./DCS-toolbox`
   * `conda env create -f environment.yml`
   * `source activate choirset`
   
