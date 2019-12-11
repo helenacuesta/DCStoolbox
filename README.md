@@ -8,15 +8,15 @@ Authors: Sebastian Rosenzweig and Helena Cuesta.
 1. Download the DCS dataset from [Zenodo](https://www.zenodo.org)
 2. Clone repository
   * `git pull https://github.com/helenacuesta/ChoirSet-Toolbox.git`
-  * `cd ./DCS-toolbox`
+  * `cd ./DCStoolbox`
   * `git submodule init`
   * `git submodule update`
 3. Install Miniconda
   * `conda env create -f environment.yml`
   * `source activate choirset`
-  
+
 To use the toolbox functions type:
-`import DCS-toolbox`
+`import DCStoolbox`
 
 If you want to contribute to this repository, please install nbstripout:
 `nbstripout --install`
@@ -29,9 +29,9 @@ If you want to contribute to this repository, please install nbstripout:
 
 ### Data preparation
 * utils.py: Functions for syncing audio and video
-* downsampling 
-* normalizing 
-* video-synch 
+* downsampling
+* normalizing
+* video-synch
 * audio to MIDI alignment
 
 ### Data processing
