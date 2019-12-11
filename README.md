@@ -13,7 +13,7 @@ Authors: Sebastian Rosenzweig and Helena Cuesta.
   * `git submodule update`
 3. Install Miniconda
   * `conda env create -f environment.yml`
-  * `source activate choirset`
+  * `source activate DCS`
 
 To use the toolbox functions type:
 `import DCStoolbox`
