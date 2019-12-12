@@ -1,6 +1,10 @@
 import sox
 from choirset_toolbox.preparation import config
 import os
+from scipy.io import wavfile
+
+import librosa
+
 ##########################################################################################
 
 def create_filename_dictionary(channel_assignment):
@@ -13,7 +17,7 @@ def create_filename_dictionary(channel_assignment):
     :return: dictionary of dictionaries with the information
     '''
 
-    headers = ['Logic', 'All', 'Basses', 'QuartetB', 'QuartetA', 'Shortcuts']
+    headers = ['Logic', 'FullChoir', 'Basses', 'QuartetB', 'QuartetA', 'Shortcuts']
 
     nrows, ncols = channel_assignment.shape
 
@@ -90,11 +94,20 @@ def cut_audiofile_iteratively(input_filename,bounds,filename_dict):
 
 def normalize_audio_file(audiopath,audiofile):
 
-    tfm = sox.Transformer()
-    tfm.convert(samplerate=22050)
-    tfm.norm(db_level=-2) # this function normalized audio to -3dB
+    # load and downsample audio to 22050 Hz
 
-    tfm.build(os.path.join(audiopath,audiofile),os.path.join(config.output_folder_downsampled,audiofile))
+    x, sr = librosa.core.load(os.path.join(audiopath, audiofile), sr=22050.0)
+
+    # max normalization
+    x = x / x.max()
+
+    if x.max() != 1:
+        print("There has been some problem with normalization. Max value is not 1.")
+
+
+    # save new file
+
+    wavfile.write(os.path.join(config.output_folder_downsampled, audiofile), rate=22050, data=x)
 
 ##########################################################################################
 
