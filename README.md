@@ -1,36 +1,37 @@
-# Dagstuhl-ChoirSet
+# Dagstuhl Choir Set Toolbox
 
-This repository contains the code (work in progress) to create the Dagstuhl ChoirSet.
+Python toolbox for using the DCS dataset (work in progress).
 
 Authors: Sebastian Rosenzweig and Helena Cuesta.
 
-## To run the code:
-* Install Miniconda
-* `conda env create -f environment.yml`
-* `source activate choirset`
+## Get started
+1. Download the DCS dataset from [Zenodo](https://www.zenodo.org)
+2. Clone repository
+  * `git pull https://github.com/helenacuesta/DCStoolbox
+  * `cd ./DCStoolbox`
+  * `git submodule init`
+  * `git submodule update`
+3. Install Miniconda
+  * `conda env create -f environment.yml`
+  * `source activate DCS`
 
-If you wan to contribute, please install nbstripout:
+To use the toolbox functions type:
+`import DCStoolbox`
+
+If you want to contribute to this repository, please install nbstripout:
 `nbstripout --install`
 
 ## Demo Notebooks
-* Data preparation.ipynb
+* demo1_dataVisualization.ipynb: Basic parsing, visualization, and sonification functions
 * Microphone comparison.ipynb
 * Intonation quality.ipynb
 * Singer evolution or basses analysis.ipynb
 
-## Data files
-Not included in the code repository, Zenodo link.
-
-## ChoirSet-Toolbox
-
-To use the toolbox functions type:
-`import choirset-toolbox`
-
 ### Data preparation
 * utils.py: Functions for syncing audio and video
-* downsampling 
-* normalizing 
-* video-synch 
+* downsampling
+* normalizing
+* video-synch
 * audio to MIDI alignment
 
 ### Data processing
