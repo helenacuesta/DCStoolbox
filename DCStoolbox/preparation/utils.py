@@ -1,5 +1,5 @@
 import sox
-from choirset_toolbox.preparation import config
+from DCStoolbox.preparation import config
 import os
 from scipy.io import wavfile
 
@@ -81,6 +81,8 @@ def cut_audiofile_iteratively(input_filename,bounds,filename_dict):
         tfm.trim(tin,tout)
 
         output_filename = generate_filename(input_filename,line,filename_dict)
+
+        print(output_filename)
 
         if 'nan' in output_filename: continue
 

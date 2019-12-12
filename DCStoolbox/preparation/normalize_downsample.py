@@ -3,8 +3,8 @@ This scrip max-normalizes audio files and downsamples them (if necessary) to 220
 '''
 
 import os
-from choirset_toolbox.preparation import utils
-from choirset_toolbox.preparation import config
+from DCStoolbox.preparation import utils
+from DCStoolbox.preparation import config
 
 for filename in os.listdir(config.output_path):
 
