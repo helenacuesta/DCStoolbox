@@ -1,10 +1,10 @@
 '''
-This scrip uses PySox to normalize audiofiles in a folder to -2dB and downsample them (if necessary) to 22050 Hz.
+This scrip max-normalizes audio files and downsamples them (if necessary) to 22050 Hz.
 '''
 
 import os
-from choirset_toolbox.preparation import utils
-from choirset_toolbox.preparation import config
+from DCStoolbox.preparation import utils
+from DCStoolbox.preparation import config
 
 for filename in os.listdir(config.output_path):
 
