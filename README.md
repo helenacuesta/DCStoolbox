@@ -1,6 +1,6 @@
-# Dagstuhl Choir Set Toolbox
+# Dagstuhl ChoirSet Toolbox
 
-Python toolbox for using the DCS dataset (work in progress).
+Python toolbox for using DCS dataset.
 
 Authors: Sebastian Rosenzweig and Helena Cuesta.
 
@@ -23,30 +23,3 @@ If you want to contribute to this repository, please install nbstripout:
 
 ## Demo Notebooks
 * demo1_dataVisualization.ipynb: Basic parsing, visualization, and sonification functions
-* Microphone comparison.ipynb
-* Intonation quality.ipynb
-* Singer evolution or basses analysis.ipynb
-
-### Data preparation
-* utils.py: Functions for syncing audio and video
-* downsampling
-* normalizing
-* video-synch
-* audio to MIDI alignment
-
-### Data processing
-Python file (data_processing.py) with all functions to process data. Probably including:
-
-* Reading annotations (csv files)
-* pYIN Vamp (?)
-* beat2measure
-* midi2trajectory
-* mixing audio files
-* Sonification: f0, beat, measure
-
-### Visualization
-Python file (visualization.py) with functions to visualize data. Probably including:
-
-* f0tools, visualization functions/librosa: beats/measures, f0 activity, f0 trajectories, midi
-* jupyter notebook player (SR)
-* MIDI visualization (from CSV files [onset, offset, pitch])
