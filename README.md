@@ -22,4 +22,5 @@ If you want to contribute to this repository, please install nbstripout:
 `nbstripout --install`
 
 ## Demo Notebooks
-* demo1_dataVisualization.ipynb: Basic parsing, visualization, and sonification functions
+* demo1_dataVisualization.ipynb: Basic parsing, visualization, and sonification functions.
+* demo2_F0Estimation.ipynb: F0-estimation using pYIN and CREPE.
