@@ -26,3 +26,5 @@ dependencies:
     - music21==5.7.0
     - pretty_midi==0.2.8
     - jupyter_contrib_nbextensions==0.5.1
+    - crepe
+    - tensorflow==2.0.0

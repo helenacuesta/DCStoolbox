@@ -1,6 +1,6 @@
 """
 Main parsing functions.
-Author: Sebastian Rosenzweig, Helena Cuesta
+Author: Blind Authors
 License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 This file is part of the Dagstuhl Choir Set Toolbox (https://github.com/helenacuesta/ChoirSet-Toolbox).

@@ -1,6 +1,6 @@
 """
 Functions for F0 estimation: pYIN (Mauch and Dixon, 2014) and CREPE (Kim et al. 2018)
-Author: Sebastian Rosenzweig, Helena Cuesta
+Author: Blind Authors
 License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 
