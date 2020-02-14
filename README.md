@@ -2,7 +2,7 @@
 
 Python toolbox for using DCS dataset.
 
-Authors: Sebastian Rosenzweig and Helena Cuesta.
+Blind authors.
 
 ## Get started
 1. Download the DCS dataset from [Zenodo](https://www.zenodo.org)
