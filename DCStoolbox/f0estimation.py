@@ -9,6 +9,9 @@ To run this code one needs to:
 - Install the pYIN  Vamp Plug-in (https://code.soundsoftware.ac.uk/projects/pyin/files) following
 these instructions: http://www.vamp-plugins.org/download.html#install
 - Then, to use the pYIN Vamp, install the Vamp Python package: https://pypi.org/project/vamp/.
+- Install the CREPE Python package, which can be installed using pip (https://github.com/marl/crepe):
+    pip install --upgrade tensorflow
+    pip install crepe
 
 This file is part of the Dagstuhl Choir Set Toolbox (https://github.com/helenacuesta/ChoirSet-Toolbox).
 """
