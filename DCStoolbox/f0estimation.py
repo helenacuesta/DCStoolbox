@@ -13,7 +13,7 @@ these instructions: http://www.vamp-plugins.org/download.html#install
     pip install --upgrade tensorflow
     pip install crepe
 
-This file is part of the Dagstuhl Choir Set Toolbox (https://github.com/helenacuesta/ChoirSet-Toolbox).
+This file is part of the Dagstuhl Choir Set Toolbox (hidden URL).
 """
 
 import crepe
