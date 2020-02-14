@@ -64,7 +64,7 @@ def extract_F0_pYIN_vamp(folder, fn, sr=22050, H=221, N=2048):
         os.mkdir(os.path.join(folder, 'pYIN'))
 
     pd.DataFrame(traj).to_csv(os.path.join(folder, 'pYIN', fn[:-3] + 'csv'), header=None)
-    print("{} F0 curve saved to {}".format(fn, os.path.join(folder, 'pYIN', fn[:-3] + 'csv')))
+    #print("{} F0 curve saved to {}".format(fn, os.path.join(folder, 'pYIN', fn[:-3] + 'csv')))
 
     return traj
 
@@ -85,7 +85,7 @@ def extract_F0_CREPE(folder, fn, sr=22050):
         os.mkdir(os.path.join(folder, 'CREPE'))
 
     pd.DataFrame(traj).to_csv(os.path.join(folder, 'CREPE', fn[:-3] + 'csv'), header=None)
-    print("{} F0 curve saved to {}".format(fn, os.path.join(folder, 'CREPE', fn[:-3] + 'csv')))
+    #print("{} F0 curve saved to {}".format(fn, os.path.join(folder, 'CREPE', fn[:-3] + 'csv')))
 
     return traj
 
