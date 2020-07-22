@@ -1,9 +1,9 @@
 """
 Main parsing functions.
-Author: Blind Authors
+Author: Helena Cuesta, Sebastian Rosenzweig
 License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
-This file is part of the Dagstuhl Choir Set Toolbox (hidden URL).
+This file is part of the Dagstuhl ChoirSet Toolbox (https://github.com/helenacuesta/DCStoolbox).
 """
 
 import glob
@@ -51,7 +51,8 @@ def DCS_content_parser(DCS_path='./DagstuhlChoirSet_V1.0/', song_id='*', setting
                           ['Beat', DCS_path + 'annotations_csv_beat/', 'csv'],
                           ['ScoreRepr', DCS_path + 'annotations_csv_scorerepresentation/', 'csv'],
                           ['F0CREPE', DCS_path + 'annotations_csv_F0_CREPE/', 'csv'],
-                          ['F0PYIN', DCS_path + 'annotations_csv_F0_PYIN/', 'csv']])
+                          ['F0PYIN', DCS_path + 'annotations_csv_F0_PYIN/', 'csv'],
+                          ['F0Manual', DCS_path + 'annotations_csv_F0_manual/', 'csv']])
 
     # initialize new Pandas dataframe
     table_headers = ['Dataset-ID', 'Song-ID', 'Setting', 'Take', 'Section', 'Microphone']

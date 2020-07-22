@@ -1,6 +1,6 @@
 """
 Functions for F0 estimation: pYIN (Mauch and Dixon, 2014) and CREPE (Kim et al. 2018)
-Author: Blind Authors
+Author: Helena Cuesta, Sebastian Rosenzweig
 License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License
 
 
@@ -13,7 +13,7 @@ these instructions: http://www.vamp-plugins.org/download.html#install
     pip install --upgrade tensorflow
     pip install crepe
 
-This file is part of the Dagstuhl Choir Set Toolbox (hidden URL).
+This file is part of the Dagstuhl ChoirSet Toolbox (https://github.com/helenacuesta/DCStoolbox).
 """
 
 import crepe
