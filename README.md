@@ -3,9 +3,7 @@
 This is the accompanying Python toolbox for the Dagstuhl ChoirSet:
 
 Sebastian Rosenzweig, Helena Cuesta, Christof Weiß, Frank Scherbaum, Emilia Gómez and Meinard Müller. Dagstuhl ChoirSet: A
-Multitrack Dataset for MIR Research on Choral Singing. Transactions of the International Society for Music Information Retrieval,
-2020, to appear.
-
+Multitrack Dataset for MIR Research on Choral Singing. Transactions of the International Society for Music Information Retrieval (TISMIR), 3(1): 98–110, 2020.
 
 ## Get started
 1. Download the DCS dataset from [Zenodo](https://doi.org/10.5281/zenodo.3897182)
